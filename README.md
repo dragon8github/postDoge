@@ -1,6 +1,6 @@
 # PostDoge 🚀🐶 
 
-> drawLessonsFrom Postman 、apizza、 Postwomen、 milkman
+> inspirationSource： Postman 、apizza、 Postwomen、 milkman
 
 <img src="./static/header.gif" width="182" align="right">
 
