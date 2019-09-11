@@ -1,0 +1,137 @@
+@mixin ycenter {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+@mixin xcenter {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+@mixin ell {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+@mixin center {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+@mixin flex ($x: false, $y: false, $direction: false) {
+    display: flex;
+
+    @if $x {
+        @if $x==s or $x==start {
+            justify-content: flex-start;
+        }
+
+        @else if $x==c or $x==center {
+            justify-content: center;
+        }
+
+        @else if $x==e or $x==end {
+            justify-content: flex-end;
+        }
+
+        @else if $x==a or $x==around {
+            justify-content: space-around;
+        }
+
+        @else if $x==b or $x==between {
+            justify-content: space-between;
+        }
+
+        @else {
+            justify-content: $x;
+        }
+    }
+
+    @if $y {
+        @if $y==s or $y==start {
+            align-items: flex-start;
+        }
+
+        @else if $y==c or $y==center {
+            align-items: center;
+        }
+
+        @else if $y==e or $y==end {
+            align-items: flex-end;
+        }
+
+        @else if $y==stretch or $y==full or $y==f {
+            align-items: stretch;
+        }
+
+        @else if $y==baseline or $y==base or $y==b or $y==line or $y==l {
+            align-items: baseline;
+        }
+
+        @else {
+            align-items: $y;
+        }
+    }
+
+    @if $direction {
+        @if $direction==c or $direction==col {
+            flex-direction: column;
+        }
+
+        @else {
+            flex-direction: $direction;
+        }
+    }
+}
+
+@mixin bg ($width, $height, $url) {
+    width: $width;
+    height: $height;
+    background: transparent url($url) center / $width $height no-repeat;
+    display: inline-block;
+}
+
+@mixin fullbg ($width, $height, $url) {
+    width: $width;
+    height: $height;
+    background: url($url) center / 100% no-repeat content-box;
+}
+
+
+/**
+ * 滚动条样式 ...
+ * 必须配合 overflow-y: scroll; 使用
+ * @include scrollbar()
+ */
+@mixin scrollbar {
+  ::-webkit-scrollbar {
+    width: 14px;
+    height: 14px;
+  }
+
+  ::-webkit-scrollbar-track,
+  ::-webkit-scrollbar-thumb {
+    border-radius: 999px;
+    border: 5px solid transparent;
+  }
+
+  ::-webkit-scrollbar-track {
+    box-shadow: 1px 1px 5px rgba(0,0,0,.2) inset;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    min-height: 20px;
+    background-clip: content-box;
+    box-shadow: 0 0 0 5px rgba(0,0,0,.2) inset;
+  }
+
+  ::-webkit-scrollbar-corner {
+    background: transparent;
+  }
+}

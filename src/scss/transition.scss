@@ -1,0 +1,108 @@
+.point {
+    display: inline-block;
+    position: relative;
+    vertical-align: baseline;
+}
+
+.point:after {
+    display: block;
+    position: absolute;
+    content: "";
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: #3cb371;
+    top: calc(50% - 40px);
+    left: calc(50% - 40px);
+    transform: scale(0);
+    will-change: transform, opacity;
+    opacity: 0
+}
+
+.point.changing:after {
+    animation: emph 1.25s;
+}
+
+@keyframes emph {
+    20% {
+        transform: none;
+        opacity: .5
+    }
+
+    to {
+        opacity: 0;
+        transform: scale(1.2)
+    }
+}
+
+.hover-underline-animation {
+  display: inline-block;
+  position: relative;
+
+  // 补丁
+  &.has-under-text::after {
+    top: 98%;
+  }
+
+  // active补丁
+  &.is-active::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    left: 0;
+    transform: scaleX(1);
+    background-color: #fff;
+  }
+}
+
+.hover-underline-animation::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background-color: #fff;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.hover-underline-animation:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.hover-shadow-box-animation {
+  display: inline-block;
+  vertical-align: middle;
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px transparent;
+  transition-duration: 0.3s;
+  transition-property: box-shadow, transform;
+}
+
+.hover-shadow-box-animation:hover,
+.hover-shadow-box-animation:focus,
+.hover-shadow-box-animation:active {
+  box-shadow: 1px 10px 10px -10px rgba(0, 0, 24, 0.5);
+  transform: scale(1.2);
+}
+
+@keyframes Pulse {
+  0% {
+    -webkit-transform: translateY(0px);
+    transform: translateY(0px);
+  }
+
+  50% {
+    -webkit-transform: translateY(-30px);
+    transform: translateY(-30px);
+  }
+
+  100% {
+    -webkit-transform: translateY(0px);
+    transform: translateY(0px);
+  }
+}
