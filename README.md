@@ -1,5 +1,11 @@
 # PostDoge 🚀🐶 
 
+> drawLessonsFrom Postman 、apizza、 Postwomen、 milkman
+
+<img src="./static/header.gif" width="182" align="right">
+
+<img src="./static/doing.png" align="center" width='100%' height='100%'>
+
 ## Project setup
 ```
 yarn install
