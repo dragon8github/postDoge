@@ -4,6 +4,8 @@
 
 <img src="./static/logo.png" width="182" align="left">
 
+<img src="./static/doge.jpg" width="182" align="center">
+
 <img src="https://raw.githubusercontent.com/sindresorhus/is/master/header.gif" width="182" align="right">
 
 <img src="./static/doing.png" align="center" width='100%' height='100%'>
