@@ -1,6 +1,8 @@
 <template>
     <div class="Menu">
-        <div class="search"></div>
+        <div class="search">
+            <a-input-search placeholder="input search text" @search="onSearch" />
+        </div>
         <a-menu class='Amenu' @click="handleClick" style="width: 256px" :defaultSelectedKeys="['1']" :openKeys.sync="openKeys" mode="inline">
             <a-sub-menu key="sub1" @titleClick="titleClick">
                 <span slot="title">
@@ -79,5 +81,10 @@ export default {
 
 .Amenu {
   height: 100%;
+}
+
+/deep/ .ant-input {
+    border-radius: 0;
+    border: 1px solid #e8e8e8;
 }
 </style>
